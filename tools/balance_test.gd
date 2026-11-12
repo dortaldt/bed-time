@@ -1,8 +1,8 @@
 extends SceneTree
 ## Headless balance test, like the prototype's test harness.
 ##
-##   godot --headless --path past-bedtime -s res://tools/balance_test.gd
-##   godot --headless --path past-bedtime -s res://tools/balance_test.gd -- --runs=32 --planner-runs=8
+##   godot --headless --path . -s res://tools/balance_test.gd
+##   godot --headless --path . -s res://tools/balance_test.gd -- --runs=32 --planner-runs=8
 ##
 ## Strategies:
 ##   default     Maya leaves at once on the living-room route, nothing else.

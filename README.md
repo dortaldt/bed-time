@@ -5,14 +5,20 @@ A Godot 4 build of the design doc's core loop. Siblings sneak to the cookie jar 
 ## Run it
 
 1. Install **Godot 4.3+** (standard build, not .NET).
-2. Open `past-bedtime/project.godot` in the editor and press **F5**.
+2. Open `project.godot` in the editor and press **F5**.
    The window is a 720×1280 portrait phone frame. The mouse acts as touch: click to tap, drag to pan, wheel to zoom.
 
-Headless balance test (prints a star histogram per night and strategy):
+Run these from the repo root. Headless balance test (prints a star histogram per night and strategy):
 
 ```sh
-godot --headless --path past-bedtime -s res://tools/balance_test.gd
-godot --headless --path past-bedtime -s res://tools/balance_test.gd -- --runs=32 --planner-runs=8
+godot --headless --path . -s res://tools/balance_test.gd
+godot --headless --path . -s res://tools/balance_test.gd -- --runs=32 --planner-runs=8
+```
+
+Screenshots of each phase (needs a display, or `xvfb-run` on Linux):
+
+```sh
+godot --path . --rendering-method gl_compatibility -s res://tools/screenshots.gd -- --out=/tmp/shots
 ```
 
 iOS: **Project > Export > Add… > iOS**, then set your Apple team ID and bundle ID. Exporting needs a Mac with Xcode.
@@ -39,6 +45,7 @@ iOS: **Project > Export > Add… > iOS**, then set your Apple team ID and bundle
 | `scripts/game/house_view.gd` | Block-art house, fog, actors, speech bubbles, lights and the plan overlay |
 | `scripts/game/ui.gd`, `timeline.gd` | Portrait UI built in code, and the timeline |
 | `tools/balance_test.gd` | Headless balance harness |
+| `tools/screenshots.gd` | Renders a screenshot of each game phase |
 
 The simulation never touches nodes, so it runs the same way in the game, in predictions and in the headless test.
 

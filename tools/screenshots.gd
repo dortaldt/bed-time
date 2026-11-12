@@ -1,6 +1,6 @@
 extends SceneTree
 ## Renders screenshots of the game through each phase. Needs a display (or Xvfb):
-##   godot --path past-bedtime --rendering-method gl_compatibility -s res://tools/screenshots.gd -- --out=/some/dir
+##   godot --path . --rendering-method gl_compatibility -s res://tools/screenshots.gd -- --out=/some/dir
 
 const T := preload("res://scripts/sim/tuning.gd")
 
